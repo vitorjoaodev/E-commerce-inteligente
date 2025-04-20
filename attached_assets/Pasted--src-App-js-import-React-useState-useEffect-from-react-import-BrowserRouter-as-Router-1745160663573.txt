@@ -1,0 +1,998 @@
+// src/App.js
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import GlobalStyle from './styles/GlobalStyle';
+import HomePage from './pages/HomePage';
+import ProductPage from './pages/ProductPage';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import VideoBackground from './components/VideoBackground';
+
+function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulação de carregamento
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <img src="/assets/logo.png" alt="Piloto Inteligente" />
+        <div className="compass-loader"></div>
+        <p>Preparando para decolagem...</p>
+      </div>
+    );
+  }
+
+  return (
+    <Provider store={store}>
+      <Router>
+        <GlobalStyle />
+        <VideoBackground />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/produto/:id" element={<ProductPage />} />
+          <Route path="/carrinho" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </Provider>
+  );
+}
+
+export default App;
+
+// src/styles/GlobalStyle.js
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  :root {
+    --primary-color: #E6B325; // Cor dourada estilo Indiana Jones
+    --secondary-color: #1A3263; // Azul aviação
+    --accent-color: #D84315; // Laranja aventura
+    --dark-color: #111111;
+    --light-color: #F5F5F5;
+    --font-adventure: 'Adventurer', 'Arial', sans-serif;
+    --font-main: 'Montserrat', sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    overflow-x: hidden;
+  }
+  
+  .loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--dark-color);
+    
+    img {
+      width: 250px;
+      margin-bottom: 30px;
+    }
+    
+    .compass-loader {
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--primary-color);
+      border-radius: 50%;
+      position: relative;
+      animation: spin 2s linear infinite;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 2px;
+        background-color: var(--primary-color);
+        transform-origin: 0% 50%;
+        animation: compassNeedle 2s ease-in-out infinite;
+      }
+    }
+    
+    p {
+      margin-top: 20px;
+      font-family: var(--font-adventure);
+      letter-spacing: 1px;
+    }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes compassNeedle {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    50% { transform: translate(-50%, -50%) rotate(180deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: var(--font-adventure);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    font-family: var(--font-adventure);
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    &:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  }
+`;
+
+export default GlobalStyle;
+
+// src/components/VideoBackground.js
+import React from 'react';
+import styled from 'styled-components';
+
+const VideoContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+`;
+
+const VideoBackground = () => {
+  return (
+    <VideoContainer>
+      <video autoPlay loop muted>
+        <source src="/assets/videos/aviation-background.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos em HTML5.
+      </video>
+    </VideoContainer>
+  );
+};
+
+export default VideoBackground;
+
+// src/components/Navbar.js
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+import { FaShoppingCart, FaCompass, FaSearch, FaUser } from 'react-icons/fa';
+
+const NavbarContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  
+  ${props => props.scrolled && `
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  `}
+`;
+
+const Logo = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  
+  img {
+    height: 50px;
+  }
+`;
+
+const NavLinks = styled.div`
+  display: flex;
+  gap: 2rem;
+  
+  a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-family: var(--font-adventure);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+    
+    &:hover {
+      color: var(--primary-color);
+      
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+`;
+
+const IconGroup = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  
+  a {
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+`;
+
+const CartCount = styled.span`
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+`;
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const cartItems = useSelector(state => state.cart.items);
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
+  return (
+    <NavbarContainer scrolled={scrolled}>
+      <Logo to="/">
+        <img src="/assets/logo.png" alt="Piloto Inteligente" />
+      </Logo>
+      
+      <NavLinks>
+        <Link to="/categoria/camisetas">Camisetas</Link>
+        <Link to="/categoria/relogios">Relógios</Link>
+        <Link to="/categoria/polos">Polos</Link>
+        <Link to="/categoria/shorts">Shorts</Link>
+        <Link to="/categoria/acessorios">Acessórios</Link>
+      </NavLinks>
+      
+      <IconGroup>
+        <Link to="/busca">
+          <FaSearch size={20} />
+        </Link>
+        <Link to="/perfil">
+          <FaUser size={20} />
+        </Link>
+        <Link to="/carrinho">
+          <FaShoppingCart size={20} />
+          {cartCount > 0 && <CartCount>{cartCount}</CartCount>}
+        </Link>
+      </IconGroup>
+    </NavbarContainer>
+  );
+};
+
+export default Navbar;
+
+// src/components/ProductCard.js
+import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { addToCart } from '../store/cartSlice';
+import { FaPlane, FaStar } from 'react-icons/fa';
+
+const Card = styled(motion.div)`
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 420px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    
+    .card-overlay {
+      opacity: 0.9;
+    }
+    
+    .quick-add {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+`;
+
+const CardOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  pointer-events: none;
+`;
+
+const QuickAdd = styled.button`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-adventure);
+  
+  &:hover {
+    background-color: var(--accent-color);
+    color: white;
+  }
+`;
+
+const ProductInfo = styled.div`
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140px;
+`;
+
+const ProductName = styled.h3`
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--light-color);
+`;
+
+const ProductPrice = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .installments {
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+`;
+
+const RatingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  
+  .stars {
+    display: flex;
+    margin-right: 8px;
+    
+    svg {
+      color: var(--primary-color);
+      margin-right: 2px;
+    }
+  }
+  
+  .count {
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+`;
+
+const ProductBadge = styled.div`
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+  font-family: var(--font-adventure);
+`;
+
+const ProductCard = ({ product }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const imageInterval = useRef(null);
+  const dispatch = useDispatch();
+  
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    // Mudar a imagem a cada 800ms quando hover
+    imageInterval.current = setInterval(() => {
+      setCurrentImageIndex(prev => 
+        prev === product.images.length - 1 ? 0 : prev + 1
+      );
+    }, 800);
+  };
+  
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    clearInterval(imageInterval.current);
+    setCurrentImageIndex(0);
+  };
+  
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch(addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.images[0],
+      quantity: 1
+    }));
+  };
+  
+  return (
+    <Link to={`/produto/${product.id}`} style={{ textDecoration: 'none' }}>
+      <Card
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        whileHover={{ scale: 1.03 }}
+        transition={{ type: 'spring', stiffness: 300 }}
+      >
+        {product.badge && <ProductBadge>{product.badge}</ProductBadge>}
+        <ImageContainer>
+          <motion.img
+            src={product.images[currentImageIndex]}
+            alt={product.name}
+            animate={{ scale: isHovered ? 1.1 : 1 }}
+            transition={{ duration: 0.5 }}
+          />
+          <CardOverlay className="card-overlay" />
+          <QuickAdd className="quick-add" onClick={handleAddToCart}>
+            Adicionar ao Carrinho
+          </QuickAdd>
+        </ImageContainer>
+        <ProductInfo>
+          <ProductName>{product.name}</ProductName>
+          <div>
+            <RatingContainer>
+              <div className="stars">
+                {[...Array(5)].map((_, index) => (
+                  <FaStar key={index} size={14} color={index < product.rating ? '#E6B325' : '#444'} />
+                ))}
+              </div>
+              <span className="count">({product.reviewCount})</span>
+            </RatingContainer>
+            <ProductPrice>
+              <span className="price">R$ {product.price.toFixed(2)}</span>
+              <span className="installments">ou 3x de R$ {(product.price / 3).toFixed(2)}</span>
+            </ProductPrice>
+          </div>
+        </ProductInfo>
+      </Card>
+    </Link>
+  );
+};
+
+export default ProductCard;
+
+// src/pages/HomePage.js
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import ProductCard from '../components/ProductCard';
+import { fetchProducts } from '../api/productsApi';
+
+const HeroSection = styled.div`
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    
+    span {
+      color: var(--primary-color);
+    }
+  }
+  
+  p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  }
+`;
+
+const ExploreButton = styled(motion.button)`
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  
+  &:hover {
+    background-color: var(--accent-color);
+    color: white;
+  }
+`;
+
+const ProductsSection = styled.section`
+  padding: 5rem 2rem;
+  background: rgba(10, 10, 10, 0.8);
+  
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    
+    span {
+      color: var(--primary-color);
+    }
+  }
+`;
+
+const ProductGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+`;
+
+const CategorySection = styled.section`
+  padding: 5rem 2rem;
+  
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    
+    span {
+      color: var(--primary-color);
+    }
+  }
+`;
+
+const CategoryGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+`;
+
+const CategoryCard = styled(motion.div)`
+  position: relative;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.1);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+    
+    .btn {
+      align-self: flex-start;
+      padding: 8px 16px;
+      background-color: var(--primary-color);
+      color: var(--dark-color);
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      
+      &:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
+    }
+  }
+`;
+
+const HomePage = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const data = await fetchProducts();
+        setProducts(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        setLoading(false);
+      }
+    };
+    
+    getProducts();
+  }, []);
+  
+  // Dados de categorias simulados
+  const categories = [
+    { 
+      id: 1, 
+      name: 'Camisetas', 
+      image: '/assets/categories/camisetas.jpg',
+      count: 15
+    },
+    { 
+      id: 2, 
+      name: 'Relógios', 
+      image: '/assets/categories/relogios.jpg',
+      count: 8
+    },
+    { 
+      id: 3, 
+      name: 'Polos', 
+      image: '/assets/categories/polos.jpg',
+      count: 12
+    },
+    { 
+      id: 4, 
+      name: 'Shorts', 
+      image: '/assets/categories/shorts.jpg',
+      count: 9
+    }
+  ];
+  
+  // Produtos populares simulados (em produção seriam carregados da API)
+  const featuredProducts = [
+    {
+      id: 1,
+      name: "Camiseta Piloto Vintage",
+      price: 89.90,
+      rating: 4,
+      reviewCount: 42,
+      images: [
+        "/assets/products/camiseta1-1.jpg",
+        "/assets/products/camiseta1-2.jpg",
+        "/assets/products/camiseta1-3.jpg"
+      ],
+      badge: "Novo"
+    },
+    {
+      id: 2,
+      name: "Relógio de Pulso Aviador",
+      price: 299.90,
+      rating: 5,
+      reviewCount: 18,
+      images: [
+        "/assets/products/relogio1-1.jpg",
+        "/assets/products/relogio1-2.jpg",
+        "/assets/products/relogio1-3.jpg"
+      ],
+      badge: "Bestseller"
+    },
+    {
+      id: 3,
+      name: "Polo Premium Asas",
+      price: 129.90,
+      rating: 4,
+      reviewCount: 27,
+      images: [
+        "/assets/products/polo1-1.jpg",
+        "/assets/products/polo1-2.jpg",
+        "/assets/products/polo1-3.jpg"
+      ]
+    },
+    {
+      id: 4,
+      name: "Shorts Cargo Piloto",
+      price: 119.90,
+      rating: 4,
+      reviewCount: 15,
+      images: [
+        "/assets/products/shorts1-1.jpg",
+        "/assets/products/shorts1-2.jpg"
+      ]
+    }
+  ];
+  
+  return (
+    <>
+      <HeroSection>
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Descubra sua <span>Aventura Aérea</span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          Vestuário e acessórios exclusivos para quem tem a aviação no sangue
+          e a aventura no coração.
+        </motion.p>
+        <ExploreButton
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          Explorar Coleção
+        </ExploreButton>
+      </HeroSection>
+      
+      <CategorySection>
+        <h2>Nossas <span>Categorias</span></h2>
+        <CategoryGrid>
+          {categories.map((category) => (
+            <CategoryCard 
+              key={category.id}
+              whileHover={{ y: -10 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <img src={category.image} alt={category.name} />
+              <div className="overlay">
+                <h3>{category.name}</h3>
+                <button className="btn">Ver {category.count} itens</button>
+              </div>
+            </CategoryCard>
+          ))}
+        </CategoryGrid>
+      </CategorySection>
+      
+      <ProductsSection>
+        <h2>Produtos <span>Destaques</span></h2>
+        <ProductGrid>
+          {featuredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </ProductGrid>
+      </ProductsSection>
+    </>
+  );
+};
+
+export default HomePage;
+
+// src/store/index.js
+import { configureStore } from '@reduxjs/toolkit';
+import cartReducer from './cartSlice';
+import productsReducer from './productsSlice';
+
+export default configureStore({
+  reducer: {
+    cart: cartReducer,
+    products: productsReducer
+  }
+});
+
+// src/store/cartSlice.js
+import { createSlice } from '@reduxjs/toolkit';
+
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState: {
+    items: [],
+    total: 0
+  },
+  reducers: {
+    addToCart: (state, action) => {
+      const itemExists = state.items.find(item => item.id === action.payload.id);
+      
+      if (itemExists) {
+        itemExists.quantity++;
+      } else {
+        state.items.push({ ...action.payload });
+      }
+      
+      state.total = state.items.reduce(
+        (sum, item) => sum + item.price * item.quantity, 
+        0
+      );
+    },
+    removeFromCart: (state, action) => {
+      state.items = state.items.filter(item => item.id !== action.payload);
+      
+      state.total = state.items.reduce(
+        (sum, item) => sum + item.price * item.quantity, 
+        0
+      );
+    },
+    updateQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const item = state.items.find(item => item.id === id);
+      
+      if (item) {
+        item.quantity = quantity;
+      }
+      
+      state.total = state.items.reduce(
+        (sum, item) => sum + item.price * item.quantity, 
+        0
+      );
+    },
+    clearCart: (state) => {
+      state.items = [];
+      state.total = 0;
+    }
+  }
+});
+
+export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions;
+export default cartSlice.reducer;
+
+// src/store/productsSlice.js
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchProducts } from '../api/productsApi';
+
+export const getProducts = createAsyncThunk(
+  'products/getProducts',
+  async () => {
+    const response = await fetchProducts();
+    return response;
+  }
+);
+
+const productsSlice = createSlice({
+  name: 'products',
+  initialState: {
+    items: [],
+    status: 'idle',
