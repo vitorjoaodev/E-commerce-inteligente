@@ -228,10 +228,10 @@ export class MemStorage implements IStorage {
         slug: 'camiseta-cockpit-classic',
         description: 'Inspirada nos uniformes dos primeiros pilotos, esta camiseta de algodão premium traz um design exclusivo com elementos gráficos do painel de controle de aeronaves clássicas. Perfeita para os aventureiros que carregam o espírito da aviação.',
         price: 149.90,
-        image: 'https://images.unsplash.com/photo-1590417798902-9fb9d5ca38c4?w=800&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&auto=format&fit=crop',
         images: [
-          'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=800&auto=format&fit=crop'
+          'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1618354691229-88d47f285158?w=800&auto=format&fit=crop'
         ],
         rating: 5,
         reviewCount: 42,
