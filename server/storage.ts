@@ -205,6 +205,25 @@ export class MemStorage implements IStorage {
     // Create products
     const products = [
       {
+        name: 'Jaqueta Aviador Premium',
+        slug: 'jaqueta-aviador-premium',
+        description: 'Inspirada nas jaquetas clássicas dos pilotos da Segunda Guerra, esta jaqueta de couro legítimo com detalhes em lã oferece estilo atemporal e proteção contra o vento. Os patches bordados e fechos metálicos vintage completam o visual autêntico de aviador.',
+        price: 1299.90,
+        image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&auto=format&fit=crop',
+        images: [
+          'https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1548883354-94bcfe321cbb?w=800&auto=format&fit=crop'
+        ],
+        rating: 4.9,
+        reviewCount: 36,
+        installments: 12,
+        category: 'camisetas',
+        featured: true,
+        stock: 15,
+        sizes: ['P', 'M', 'G', 'GG'],
+        colors: ['#8B4513', '#000000', '#556B2F']
+      },
+      {
         name: 'Camiseta Cockpit Classic',
         slug: 'camiseta-cockpit-classic',
         description: 'Inspirada nos uniformes dos primeiros pilotos, esta camiseta de algodão premium traz um design exclusivo com elementos gráficos do painel de controle de aeronaves clássicas. Perfeita para os aventureiros que carregam o espírito da aviação.',
