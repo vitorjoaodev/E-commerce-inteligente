@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 96%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 96%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 96%;
+    
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 0%;
+    
+    --secondary: 222 53% 25%;
+    --secondary-foreground: 0 0% 96%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    
+    --accent: 16 83% 47%;
+    --accent-foreground: 0 0% 96%;
+    
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 96%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply antialiased bg-background text-foreground overflow-x-hidden;
+    font-family: var(--font-main);
+  }
+  
+  h1, h2, h3, h4 {
+    @apply tracking-wider uppercase;
+    font-family: var(--font-adventure);
+  }
+  
+  /* Custom animations */
+  @keyframes compass-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes compassNeedle {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    50% { transform: translate(-50%, -50%) rotate(180deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#8B4513] rounded;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+/* Define adventure-themed utility classes */
+@layer components {
+  .adventure-divider {
+    background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YW50aXF1ZSUyMHBhcGVyfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-position: center;
+    height: 3px;
+  }
+  
+  .leather-texture {
+    background-image: url('https://images.unsplash.com/photo-1561814304-7f9ad6b13403?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVhdGhlciUyMHRleHR1cmV8ZW58MHx8MHx8fDA%3D');
+    background-size: cover;
+  }
+  
+  .compass-loader {
+    @apply w-12 h-12 border-2 border-primary rounded-full relative;
+    animation: compass-spin 3s linear infinite;
+  }
+
+  .compass-loader::after {
+    content: '';
+    @apply absolute top-1/2 left-1/2 w-6 h-0.5 bg-primary;
+    transform-origin: 0% 50%;
+    animation: compassNeedle 2s ease-in-out infinite;
+  }
+  
+  .flight-path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: dash 5s linear infinite;
+  }
+  
+  .adventure-btn {
+    @apply bg-[#8B4513] hover:bg-primary text-foreground hover:text-background py-3 px-8 rounded 
+    font-adventure uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .product-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none;
+    background: radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.8) 100%);
+  }
+  
+  .product-card:hover::before {
+    @apply opacity-100;
+  }
+}

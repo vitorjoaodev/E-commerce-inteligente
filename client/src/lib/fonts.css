@@ -1,0 +1,13 @@
+/* Custom font settings */
+:root {
+  --font-adventure: 'Playfair Display', serif;
+  --font-main: 'Montserrat', sans-serif;
+}
+
+.font-adventure {
+  font-family: var(--font-adventure);
+}
+
+.font-main {
+  font-family: var(--font-main);
+}
