@@ -207,12 +207,13 @@ export class MemStorage implements IStorage {
       {
         name: 'Jaqueta Aviador Premium',
         slug: 'jaqueta-aviador-premium',
-        description: 'Inspirada nas jaquetas clássicas dos pilotos da Segunda Guerra, esta jaqueta de couro legítimo com detalhes em lã oferece estilo atemporal e proteção contra o vento. Os patches bordados e fechos metálicos vintage completam o visual autêntico de aviador.',
+        description: 'Apresentando o logo vintage com asas da Boeing, esta jaqueta de voo leve e estilosa para o verão é inspirada no design clássico das roupas de aviação. Na cor carvão, ela é feita com uma mistura rica em algodão e se destaca pelos bolsos para mapas, zíperes de metal escovado e ombros em lona resistente.\n\nMistura rica em algodão\n\nCor: Carvão (Charcoal)\n\nForro em nylon\n\nBolsos nos ombros e punhos com zíperes de metal escovado\n\nBolso no ombro em lona pesada, ideal para guardar uma caneta',
         price: 1299.90,
-        image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&auto=format&fit=crop',
+        image: 'https://redcanoebrands.com/wp-content/uploads/2016/01/M-JKT-BOEING-CH_front.jpg',
         images: [
-          'https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1548883354-94bcfe321cbb?w=800&auto=format&fit=crop'
+          'https://redcanoebrands.com/wp-content/uploads/2016/01/Mens-BTO-Jacket.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2023/03/M-JKT-BTO-01-CH_lifestyle2.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2016/01/Mens-BTOFlight-Jacket.jpg'
         ],
         rating: 4.9,
         reviewCount: 36,
