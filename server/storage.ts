@@ -228,7 +228,7 @@ export class MemStorage implements IStorage {
         slug: 'cessna-style',
         description: 'Tornar-se piloto é a conquista pessoal da qual muitas pessoas mais se orgulham. Nossa mais recente coleção de produtos, desenvolvida para os entusiastas das aeronaves Cessna, reflete a paixão de um piloto pelo voo.\n\nFeita 100% de algodão\n\nCor: Azul marinho\n\nPatch tecido com várias bandeiras na manga\n\nLavada após a estampa para evitar encolhimento e adicionar um toque vintage',
         price: 149.90,
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_T-ZEmYcxUC85eZL_pX_xISUtzg1HtocbiQ&s',
+        image: 'https://redcanoebrands.com/wp-content/uploads/2013/11/M-SST-CESSNA-NY-front-1.jpg',
         images: [
           'https://redcanoebrands.com/wp-content/uploads/2023/03/M-SST-CESS-CA-NY_lifestyle3.jpg',
           'https://redcanoebrands.com/wp-content/uploads/2022/03/M-SST-CESSNA-NY_lifestyle_2.jpg'
