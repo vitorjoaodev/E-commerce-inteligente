@@ -224,14 +224,14 @@ export class MemStorage implements IStorage {
         colors: ['#8B4513', '#000000', '#556B2F']
       },
       {
-        name: 'Camiseta Cockpit Classic',
-        slug: 'camiseta-cockpit-classic',
-        description: 'Inspirada nos uniformes dos primeiros pilotos, esta camiseta de algodão premium traz um design exclusivo com elementos gráficos do painel de controle de aeronaves clássicas. Perfeita para os aventureiros que carregam o espírito da aviação.',
+        name: 'Cessna Style',
+        slug: 'cessna-style',
+        description: 'Tornar-se piloto é a conquista pessoal da qual muitas pessoas mais se orgulham. Nossa mais recente coleção de produtos, desenvolvida para os entusiastas das aeronaves Cessna, reflete a paixão de um piloto pelo voo.\n\nFeita 100% de algodão\n\nCor: Azul marinho\n\nPatch tecido com várias bandeiras na manga\n\nLavada após a estampa para evitar encolhimento e adicionar um toque vintage',
         price: 149.90,
-        image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&auto=format&fit=crop',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_T-ZEmYcxUC85eZL_pX_xISUtzg1HtocbiQ&s',
         images: [
-          'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1618354691229-88d47f285158?w=800&auto=format&fit=crop'
+          'https://redcanoebrands.com/wp-content/uploads/2023/03/M-SST-CESS-CA-NY_lifestyle3.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2022/03/M-SST-CESSNA-NY_lifestyle_2.jpg'
         ],
         rating: 5,
         reviewCount: 42,
