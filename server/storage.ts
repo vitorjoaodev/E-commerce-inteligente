@@ -282,23 +282,23 @@ export class MemStorage implements IStorage {
         colors: ['#FFFFFF', '#006400', '#8B4513']
       },
       {
-        name: 'Chaveiro Compass Navigator',
-        slug: 'chaveiro-compass-navigator',
-        description: 'Este chaveiro é uma réplica autêntica das bússolas utilizadas pelos navegadores aéreos nas primeiras expedições comerciais. Fabricado em latão envelhecido com detalhes em couro genuíno. Um acessório funcional e cheio de história para acompanhar suas aventuras.',
-        price: 89.90,
-        image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop',
+        name: 'Carteira Boeing',
+        slug: 'carteira-boeing',
+        description: 'Carteira Boeing - Engenharia de Espaços, Inspirada na precisão e inovação da engenharia aeroespacial da Boeing, esta carteira combina funcionalidade com um design sofisticado.\n\nFeita em couro legítimo (cowhide)\n\nCor: Marrom claro (Tan)\n\nDimensões: 12,7 cm (C) x 10,2 cm (L) x 1,9 cm (P)\n\nUma peça elegante e resistente — perfeita para quem carrega no dia a dia o espírito da aviação.',
+        price: 299.90,
+        image: 'https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-VINTAGELOGO-TN_lifestyle2.jpg',
         images: [
-          'https://images.unsplash.com/photo-1531170095369-c677a0f3dc1e?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1633354241508-a93df4578211?w=800&auto=format&fit=crop'
+          'https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-VINTAGELOGO-TN_lifestyle1.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-VINTAGELOGO-TN_lifestyle2.jpg'
         ],
         rating: 4.9,
-        reviewCount: 56,
-        installments: 2,
+        reviewCount: 42,
+        installments: 6,
         category: 'acessorios',
         featured: true,
-        stock: 30,
+        stock: 25,
         sizes: ['Único'],
-        colors: ['#DAA520']
+        colors: ['#D2B48C']
       },
       {
         name: 'Shorts Aviation',
@@ -318,25 +318,6 @@ export class MemStorage implements IStorage {
         stock: 18,
         sizes: ['38', '40', '42', '44', '46'],
         colors: ['#8B4513', '#006400', '#333333']
-      },
-      {
-        name: 'Camiseta Mapa Aéreo',
-        slug: 'camiseta-mapa-aereo',
-        description: 'Esta camiseta apresenta uma estampa exclusiva com mapas de navegação aérea vintage e coordenadas de destinos icônicos da história da aviação. Confeccionada em algodão orgânaúnico.',
-        price: 129.90,
-        image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.usejetlag.com.br%2Fcamisetas%2Fmapas%2F&psig=AOvVaw1TZgOHWQqscRhg9PWIM6ph&ust=1745863287078000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICOpNzl-IwDFQAAAAAdAAAAABAE',
-        images: [
-          'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.usejetlag.com.br%2Fcamisetas%2Fmapas%2F&psig=AOvVaw1TZgOHWQqscRhg9PWIM6ph&ust=1745863287078000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICOpNzl-IwDFQAAAAAdAAAAABAE',
-          'https://srv.latostadora.com/image/mapa-mundi-papel--id:ddc4a79e-5094-453e-87de-8a0b8e6e9408;s:H_A1;b:f1f1f1;h:520;f:f;i:1356232364666135623201709261.jpg'
-        ],
-        rating: 4.6,
-        reviewCount: 18,
-        installments: 3,
-        category: 'camisetas',
-        featured: false,
-        stock: 15,
-        sizes: ['P', 'M', 'G', 'GG'],
-        colors: ['#FFFFFF', '#000000', '#DAA520']
       },
       {
         name: 'Relógio Compass Expedition',
