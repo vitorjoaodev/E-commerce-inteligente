@@ -9,6 +9,7 @@ import store from './lib/store';
 
 import VideoBackground from './components/VideoBackground';
 import Navbar from './components/Navbar';
+import ExitIntentPopup from './components/ExitIntentPopup';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 
@@ -39,6 +40,7 @@ function App() {
           <Router>
             <VideoBackground />
             <Navbar />
+            <ExitIntentPopup />
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/produto/:id" element={<ProductPage />} />

@@ -21,19 +21,19 @@ export interface IStorage {
   createProduct(product: InsertProduct): Promise<Product>;
   getFeaturedProducts(): Promise<Product[]>;
   getProductsByCategory(categoryName: string): Promise<Product[]>;
-  
+
   // Category operations
   getAllCategories(): Promise<Category[]>;
   getCategoryBySlug(slug: string): Promise<Category | undefined>;
   createCategory(category: InsertCategory): Promise<Category>;
-  
+
   // Order operations
   getAllOrders(): Promise<Order[]>;
   getOrderById(id: number): Promise<Order | undefined>;
   getOrdersByCustomerId(customerId: number): Promise<Order[]>;
   createOrder(order: InsertOrder): Promise<Order>;
   updateOrderStatus(id: number, status: string): Promise<Order | undefined>;
-  
+
   // Customer operations
   getCustomerById(id: number): Promise<Customer | undefined>;
   getCustomerByEmail(email: string): Promise<Customer | undefined>;
@@ -46,36 +46,36 @@ export class MemStorage implements IStorage {
   private categories: Map<number, Category>;
   private orders: Map<number, Order>;
   private customers: Map<number, Customer>;
-  
+
   private productCurrentId: number;
   private categoryCurrentId: number;
   private orderCurrentId: number;
   private customerCurrentId: number;
-  
+
   constructor() {
     this.products = new Map();
     this.categories = new Map();
     this.orders = new Map();
     this.customers = new Map();
-    
+
     this.productCurrentId = 1;
     this.categoryCurrentId = 1;
     this.orderCurrentId = 1;
     this.customerCurrentId = 1;
-    
+
     // Initialize with sample data
     this.initializeData();
   }
-  
+
   // Product methods
   async getAllProducts(): Promise<Product[]> {
     return Array.from(this.products.values());
   }
-  
+
   async getProductById(id: number): Promise<Product | undefined> {
     return this.products.get(id);
   }
-  
+
   async createProduct(insertProduct: InsertProduct): Promise<Product> {
     const id = this.productCurrentId++;
     const now = new Date();
@@ -83,55 +83,55 @@ export class MemStorage implements IStorage {
     this.products.set(id, product);
     return product;
   }
-  
+
   async getFeaturedProducts(): Promise<Product[]> {
     return Array.from(this.products.values()).filter(product => product.featured);
   }
-  
+
   async getProductsByCategory(categoryName: string): Promise<Product[]> {
     // If category is "todos", return all products
     if (categoryName === "todos") {
       return this.getAllProducts();
     }
-    
+
     return Array.from(this.products.values()).filter(
       product => product.category === categoryName
     );
   }
-  
+
   // Category methods
   async getAllCategories(): Promise<Category[]> {
     return Array.from(this.categories.values());
   }
-  
+
   async getCategoryBySlug(slug: string): Promise<Category | undefined> {
     return Array.from(this.categories.values()).find(
       category => category.slug === slug
     );
   }
-  
+
   async createCategory(insertCategory: InsertCategory): Promise<Category> {
     const id = this.categoryCurrentId++;
     const category: Category = { ...insertCategory, id };
     this.categories.set(id, category);
     return category;
   }
-  
+
   // Order methods
   async getAllOrders(): Promise<Order[]> {
     return Array.from(this.orders.values());
   }
-  
+
   async getOrderById(id: number): Promise<Order | undefined> {
     return this.orders.get(id);
   }
-  
+
   async getOrdersByCustomerId(customerId: number): Promise<Order[]> {
     return Array.from(this.orders.values()).filter(
       order => order.customerId === customerId
     );
   }
-  
+
   async createOrder(insertOrder: InsertOrder): Promise<Order> {
     const id = this.orderCurrentId++;
     const now = new Date();
@@ -139,34 +139,34 @@ export class MemStorage implements IStorage {
     this.orders.set(id, order);
     return order;
   }
-  
+
   async updateOrderStatus(id: number, status: string): Promise<Order | undefined> {
     const order = this.orders.get(id);
     if (!order) return undefined;
-    
+
     const updatedOrder = { ...order, status };
     this.orders.set(id, updatedOrder);
     return updatedOrder;
   }
-  
+
   // Customer methods
   async getCustomerById(id: number): Promise<Customer | undefined> {
     return this.customers.get(id);
   }
-  
+
   async getCustomerByEmail(email: string): Promise<Customer | undefined> {
     return Array.from(this.customers.values()).find(
       customer => customer.email === email
     );
   }
-  
+
   async createCustomer(insertCustomer: InsertCustomer): Promise<Customer> {
     const id = this.customerCurrentId++;
     const customer: Customer = { ...insertCustomer, id };
     this.customers.set(id, customer);
     return customer;
   }
-  
+
   // Seed the database with initial data
   private initializeData() {
     // Create categories
@@ -197,11 +197,11 @@ export class MemStorage implements IStorage {
         image: 'https://images.unsplash.com/photo-1547458095-a045e1845d70?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
       }
     ];
-    
+
     categories.forEach(category => {
       this.createCategory(category);
     });
-    
+
     // Create products
     const products = [
       {
@@ -244,23 +244,24 @@ export class MemStorage implements IStorage {
         colors: ['#000000', '#FFFFFF', '#0A3D62']
       },
       {
-        name: 'Relógio Aviator Heritage',
-        slug: 'relogio-aviator-heritage',
-        description: 'Um relógio inspirado nos instrumentos de navegação utilizados pelos pioneiros da aviação. Com caixa em aço inoxidável e pulseira em couro genuíno envelhecido, este relógio é à prova d\'água e possui movimento automático de alta precisão. Uma verdadeira peça para os exploradores modernos.',
-        price: 699.90,
-        image: 'https://images.unsplash.com/photo-1622434641406-a158123450f9?w=800&auto=format&fit=crop',
+        name: 'Relógio Boeing',
+        slug: 'relogio-boeing',
+        description: 'Inspirado na excelência e na engenharia de ponta da Boeing, este relógio combina sofisticação e resistência. Ideal para o dia a dia ou ocasiões especiais, ele eleva qualquer look com elegância e discrição — refletindo a tradição da aviação em cada detalhe.\n\nMovimento japonês de alta precisão\n\nCaixa em aço inoxidável com aro giratório também em aço\n\nResistência à água: 10 ATM (100 metros)\n\nMostrador azul degradê com índices impressos\n\nLogo impresso no mostrador e gravação a laser no fundo da caixa\n\nDiâmetro da caixa: 42 mm\n\nEspessura da caixa: 12 mm\n\nPeso aproximado: 80g',
+        price: 489.99,
+        oldPrice: 500,
+        image: 'https://www.boeingstore.com/cdn/shop/products/brownwatch1.jpg?v=1617997785',
         images: [
-          'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1594576722512-582d19f2718d?w=800&auto=format&fit=crop'
+          'https://www.boeingstore.com/cdn/shop/products/117017040431_alt2_b_3dee6b77-932d-4df1-afa4-fdab9e50be7a.jpg?v=1620159377',
+          'https://www.boeingstore.com/cdn/shop/products/4aede2aedcbd95d1f4f66447967afa5e.jpg?v=1617297480'
         ],
-        rating: 5,
-        reviewCount: 28,
+        rating: 4.9,
+        reviewCount: 42,
         installments: 10,
         category: 'relogios',
         featured: true,
-        stock: 12,
+        stock: 15,
         sizes: ['Único'],
-        colors: ['#8B4513', '#000000']
+        colors: ['#000080']
       },
       {
         name: 'Boné Boeing',
@@ -359,7 +360,7 @@ export class MemStorage implements IStorage {
         colors: ['#006400', '#8B4513', '#333333']
       }
     ];
-    
+
     products.forEach(product => {
       this.createProduct(product);
     });
