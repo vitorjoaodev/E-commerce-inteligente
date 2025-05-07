@@ -263,23 +263,24 @@ export class MemStorage implements IStorage {
         colors: ['#8B4513', '#000000']
       },
       {
-        name: 'Polo Captain Premium',
-        slug: 'polo-captain-premium',
-        description: 'Confeccionada em algodão pima e elastano, esta polo oferece conforto excepcional e um caimento perfeito. Detalhes bordados com insígnias de patente aeronáutica e botões personalizados. Ideal para quem busca um visual casual com um toque de sofisticação.',
-        price: 219.90,
-        image: 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&auto=format&fit=crop',
+        name: 'Boné Boeing',
+        slug: 'bone-boeing',
+        description: 'Nosso novo boné Boeing apresenta o icônico logo "Boeing" bordado em 3D na parte frontal — o mesmo que estampa as aeronaves fabricadas atualmente. Na parte de trás, conta com o escudo da Red Canoe e a bandeira dos EUA em tecido bordado.\n\nFeito 100% em sarja de algodão escovado\n\nCor: Azul marinho\n\nAlça traseira com velcro ajustável (tamanho único que serve para a maioria)\n\nFuros de ventilação bordados\n\nLimpeza localizada (spot clean)',
+        price: 189.90,
+        image: 'https://redcanoebrands.com/wp-content/uploads/2018/10/Boeing_cap_NY.jpg',
         images: [
-          'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=800&auto=format&fit=crop'
+          'https://redcanoebrands.com/wp-content/uploads/2023/01/U-CAP-BOEING3D-NY_lifestyle2.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2023/01/U-CAP-BOEING3D-NY_lifetsyle1.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2018/10/U-CAP-BOEING3D-NY-B_back.jpg'
         ],
         rating: 4.8,
-        reviewCount: 35,
-        installments: 5,
-        category: 'polos',
+        reviewCount: 28,
+        installments: 4,
+        category: 'acessorios',
         featured: true,
-        stock: 20,
-        sizes: ['P', 'M', 'G', 'GG'],
-        colors: ['#FFFFFF', '#006400', '#8B4513']
+        stock: 30,
+        sizes: ['Único'],
+        colors: ['#000080']
       },
       {
         name: 'Carteira Boeing',
@@ -301,23 +302,23 @@ export class MemStorage implements IStorage {
         colors: ['#D2B48C']
       },
       {
-        name: 'Shorts Aviation',
-        slug: 'shorts-aviation',
-        description: 'Shorts confeccionados em tecido ripstop resistente e leve, com bolsos funcionais e design inspirado nas roupas dos pilotos de expedição. Perfeito para aventuras ao ar livre com estilo e funcionalidade.',
-        price: 179.90,
-        image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=800&auto=format&fit=crop',
+        name: 'Camiseta Longa B17',
+        slug: 'camiseta-longa-b17',
+        description: 'Celebre a herança de uma das aeronaves mais resistentes do século XX.\n\nFeita 100% de algodão\n\nCor: Cinza\n\nFita de costura em contraste\n\nGola careca canelada\n\nEtiqueta na barra\n\nLavada após a estampa para evitar encolhimento e adicionar um visual vintage\n\nPré-encolhida',
+        price: 199.90,
+        image: 'https://redcanoebrands.com/wp-content/uploads/2022/05/M-LST-B17-GY_front.jpg',
         images: [
-          'https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1593055357429-62b22dfbfc4d?w=800&auto=format&fit=crop'
+          'https://redcanoebrands.com/wp-content/uploads/2018/10/M-LST-B17CA-GY-MD_lifestyle2.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2022/05/M-LST-B17-GY_back.jpg'
         ],
-        rating: 4.7,
-        reviewCount: 22,
+        rating: 4.8,
+        reviewCount: 25,
         installments: 4,
-        category: 'shorts',
+        category: 'camisetas',
         featured: true,
-        stock: 18,
-        sizes: ['38', '40', '42', '44', '46'],
-        colors: ['#8B4513', '#006400', '#333333']
+        stock: 20,
+        sizes: ['P', 'M', 'G', 'GG'],
+        colors: ['#808080']
       },
       {
         name: 'Relógio Compass Expedition',
