@@ -32,7 +32,7 @@ const ExitIntentPopup = () => {
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-center">
-            <img src="/logo.png" alt="Logo" className="mx-auto mb-4 h-16" />
+            <img src="https://redcanoebrands.com/wp-content/uploads/2013/11/U-BAG-RCAF-TN_style1.jpg" alt="RCAF Bag" className="mx-auto mb-4 h-40 object-cover rounded-lg" />
             <h2 className="text-2xl font-adventure">15% DE DESCONTO</h2>
           </DialogTitle>
         </DialogHeader>
