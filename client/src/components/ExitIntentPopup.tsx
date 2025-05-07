@@ -1,6 +1,11 @@
 
 import { useState, useEffect } from 'react';
-import { Dialog } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const ExitIntentPopup = () => {
   const [open, setOpen] = useState(false);
@@ -24,10 +29,14 @@ const ExitIntentPopup = () => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4">
-        <div className="bg-background p-8 rounded-lg max-w-md w-full text-center">
-          <img src="/logo.png" alt="Logo" className="mx-auto mb-4 h-16" />
-          <h2 className="text-2xl font-adventure mb-4">15% DE DESCONTO</h2>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle className="text-center">
+            <img src="/logo.png" alt="Logo" className="mx-auto mb-4 h-16" />
+            <h2 className="text-2xl font-adventure">15% DE DESCONTO</h2>
+          </DialogTitle>
+        </DialogHeader>
+        <div className="text-center p-4">
           <p className="mb-6">Cadastre-se agora e ganhe 15% de desconto na sua primeira compra!</p>
           <button 
             onClick={() => setOpen(false)}
@@ -36,7 +45,7 @@ const ExitIntentPopup = () => {
             Cadastrar
           </button>
         </div>
-      </div>
+      </DialogContent>
     </Dialog>
   );
 };
