@@ -18,7 +18,9 @@ import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import CategoryPage from './pages/CategoryPage';
-import AboutPage from './pages/AboutPage';
+import { lazy } from 'react';
+
+const AboutPage = lazy(() => import('./pages/AboutPage'));
 
 function App() {
   const [loading, setLoading] = useState(true);
