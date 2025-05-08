@@ -200,7 +200,8 @@ export class MemStorage implements IStorage {
         name: 'Jaqueta Aviador Premium',
         slug: 'jaqueta-aviador-premium',
         description: 'Apresentando o logo vintage com asas da Boeing, esta jaqueta de voo leve e estilosa para o verão é inspirada no design clássico das roupas de aviação. Na cor carvão, ela é feita com uma mistura rica em algodão e se destaca pelos bolsos para mapas, zíperes de metal escovado e ombros em lona resistente.\n\nMistura rica em algodão\n\nCor: Carvão (Charcoal)\n\nForro em nylon\n\nBolsos nos ombros e punhos com zíperes de metal escovado\n\nBolso no ombro em lona pesada, ideal para guardar uma caneta',
-        price: 1299.90,
+        price: 389.99,
+        oldPrice: 400.00,
         image: 'https://redcanoebrands.com/wp-content/uploads/2016/01/M-JKT-BOEING-CH_front.jpg',
         images: [
           'https://redcanoebrands.com/wp-content/uploads/2016/01/Mens-BTO-Jacket.jpg',
@@ -279,7 +280,7 @@ export class MemStorage implements IStorage {
         name: 'Carteira Boeing',
         slug: 'carteira-boeing',
         description: 'Carteira Boeing - Engenharia de Espaços, Inspirada na precisão e inovação da engenharia aeroespacial da Boeing, esta carteira combina funcionalidade com um design sofisticado.\n\nFeita em couro legítimo (cowhide)\n\nCor: Marrom claro (Tan)\n\nDimensões: 12,7 cm (C) x 10,2 cm (L) x 1,9 cm (P)\n\nUma peça elegante e resistente — perfeita para quem carrega no dia a dia o espírito da aviação.',
-        price: 299.90,
+        price: 59.99,
         image: 'https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-VINTAGELOGO-TN_lifestyle2.jpg',
         images: [
           'https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-VINTAGELOGO-TN_lifestyle1.jpg',
@@ -298,7 +299,7 @@ export class MemStorage implements IStorage {
         name: 'Camiseta Longa B17',
         slug: 'camiseta-longa-b17',
         description: 'Celebre a herança de uma das aeronaves mais resistentes do século XX.\n\nFeita 100% de algodão\n\nCor: Cinza\n\nFita de costura em contraste\n\nGola careca canelada\n\nEtiqueta na barra\n\nLavada após a estampa para evitar encolhimento e adicionar um visual vintage\n\nPré-encolhida',
-        price: 199.90,
+        price: 129.90,
         image: 'https://redcanoebrands.com/wp-content/uploads/2022/05/M-LST-B17-GY_front.jpg',
         images: [
           'https://redcanoebrands.com/wp-content/uploads/2018/10/M-LST-B17CA-GY-MD_lifestyle2.jpg',
@@ -317,7 +318,7 @@ export class MemStorage implements IStorage {
         name: 'Camiseta Feminina B17',
         slug: 'camiseta-feminina-b17',
         description: 'Celebre a história de uma das aeronaves mais resistentes do século XX.\n\nConfeccionada em 100% algodão tipo jersey\n\nCor: Cinza\n\nFita de reforço interna contrastante\n\nGola careca com acabamento canelado\n\nEtiqueta na barra\n\nLavada após a estampa para um toque suave\n\nPré-encolhida\n\nLavar à máquina com água fria e secar em baixa temperatura ou pendurar para secar',
-        price: 189.90,
+        price: 79.99,
         image: 'https://redcanoebrands.com/wp-content/uploads/2016/02/L-SST-B17CA-GY-MD_front-1.jpg',
         images: [
           'https://redcanoebrands.com/wp-content/uploads/2016/02/L-SST-B17CA-GY_lifestyle1.jpg',
@@ -350,6 +351,26 @@ export class MemStorage implements IStorage {
         stock: 30,
         sizes: ['PP', 'P', 'M', 'G', 'GG'],
         colors: ['#708090']
+      },
+      {
+        name: 'Boné Cessna',
+        slug: 'bone-cessna',
+        description: 'Quando Clyde Cessna aprendeu a voar sozinho em 1911, deu início a uma relação única entre o ser humano e a máquina. Para milhares de aviadores e entusiastas ao redor do mundo, o nome "Cessna" tornou-se sinônimo de voo. Nossa linha retrô licenciada CESSNA é uma homenagem a esse verdadeiro ícone da aviação.\n\nO boné Cessna Aircraft traz o clássico logotipo da marca bordado em 3D, com ajuste em velcro na parte de trás, garantindo conforto para a maioria dos tamanhos. Desenvolvido para quem vive ao ar livre.\n\nConfeccionado em 100% algodão sarja\n\nCor: Azul marinho\n\nFecho ajustável com velcro (tamanho único com ajuste)\n\nBordado direto em alto relevo\n\nLimpeza localizada recomendada.',
+        price: 59.99,
+        image: 'https://redcanoebrands.com/wp-content/uploads/2013/04/U-CAP-CESS-01-NY_front.jpg',
+        images: [
+          'https://redcanoebrands.com/wp-content/uploads/2013/04/U-CAP-CESS-01-NY_lifestyle2_WEB.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2013/04/U-CAP-CESS-01-NY_lifestyle1_WEB.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2013/04/U-CAP-CESS-01-NY_back.jpg'
+        ],
+        rating: 4.8,
+        reviewCount: 15,
+        installments: 2,
+        category: 'bones',
+        featured: true,
+        stock: 30,
+        sizes: ['Único'],
+        colors: ['#000080']
       },
       
     ];
