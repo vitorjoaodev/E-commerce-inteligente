@@ -1,17 +1,9 @@
-
 import { Link } from 'react-router-dom';
 import FlightPathSvg from './FlightPathSvg';
 
 const HeroSection: React.FC = () => {
   return (
-    <section 
-      className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden"
-      style={{
-        backgroundImage: `url('https://media.istockphoto.com/id/1988923065/photo/the-cockpit-of-1950s-constellation-aircraft-is-now-part-of-the-cocktail-lounge-the-connie.jpg?s=612x612&w=0&k=20&c=Z8YcbZPmyHHoxXy_ORA_cyLlUJt6dD2YHt-n5Dij2Y0=')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
+    <section className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/90 z-10"></div>
       
       <div className="container mx-auto relative z-20 text-center">
