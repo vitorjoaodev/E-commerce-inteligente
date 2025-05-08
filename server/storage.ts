@@ -242,10 +242,10 @@ export class MemStorage implements IStorage {
         description: 'Inspirado na excelência e na engenharia de ponta da Boeing, este relógio combina sofisticação e resistência. Ideal para o dia a dia ou ocasiões especiais, ele eleva qualquer look com elegância e discrição — refletindo a tradição da aviação em cada detalhe.\n\nMovimento japonês de alta precisão\n\nCaixa em aço inoxidável com aro giratório também em aço\n\nResistência à água: 10 ATM (100 metros)\n\nMostrador azul degradê com índices impressos\n\nLogo impresso no mostrador e gravação a laser no fundo da caixa\n\nDiâmetro da caixa: 42 mm\n\nEspessura da caixa: 12 mm\n\nPeso aproximado: 80g',
         price: 489.99,
         oldPrice: 500,
-        image: 'https://www.boeingstore.com/cdn/shop/products/brownwatch1.jpg?v=1617997785',
+        image: 'https://www.theaviatorstore.com.au/cdn/shop/products/Bluedial1.webp?v=1672975154&width=1200',
         images: [
-          'https://www.boeingstore.com/cdn/shop/products/117017040431_alt2_b_3dee6b77-932d-4df1-afa4-fdab9e50be7a.jpg?v=1620159377',
-          'https://www.boeingstore.com/cdn/shop/products/4aede2aedcbd95d1f4f66447967afa5e.jpg?v=1617297480'
+          'https://www.theaviatorstore.com.au/cdn/shop/products/bluedial4.webp?v=1672975153&width=1200',
+          'https://www.theaviatorstore.com.au/cdn/shop/products/Bluedial3.webp?v=1672975154&width=1200'
         ],
         rating: 4.9,
         reviewCount: 42,
@@ -260,7 +260,7 @@ export class MemStorage implements IStorage {
         name: 'Boné Boeing',
         slug: 'bone-boeing',
         description: 'Nosso novo boné Boeing apresenta o icônico logo "Boeing" bordado em 3D na parte frontal — o mesmo que estampa as aeronaves fabricadas atualmente. Na parte de trás, conta com o escudo da Red Canoe e a bandeira dos EUA em tecido bordado.\n\nFeito 100% em sarja de algodão escovado\n\nCor: Azul marinho\n\nAlça traseira com velcro ajustável (tamanho único que serve para a maioria)\n\nFuros de ventilação bordados\n\nLimpeza localizada (spot clean)',
-        price: 189.90,
+        price: 59.99,
         image: 'https://redcanoebrands.com/wp-content/uploads/2018/10/Boeing_cap_NY.jpg',
         images: [
           'https://redcanoebrands.com/wp-content/uploads/2023/01/U-CAP-BOEING3D-NY_lifestyle2.jpg',
