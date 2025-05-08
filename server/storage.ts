@@ -174,17 +174,17 @@ export class MemStorage implements IStorage {
       {
         name: 'Camisetas',
         slug: 'camisetas',
-        image: 'https://srv.latostadora.com/image/mapa-mundi-papel--id:ddc4a79e-5094-453e-87de-8a0b8e6e9408;s:H_A1;b:f1f1f1;h:520;f:f;i:1356232364666135623201709261.jpg'
+        image: 'https://redcanoebrands.com/wp-content/uploads/2013/11/M-SST-CESSNA-NY-front-1.jpg'
       },
       {
         name: 'Relógios',
         slug: 'relogios',
-        image: 'https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        image: 'https://www.boeingstore.com/cdn/shop/products/brownwatch1.jpg?v=1617997785'
       },
       {
         name: 'Polos',
         slug: 'polos',
-        image: 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=800&auto=format&fit=crop'
+        image: 'attached_assets/image_1746655940427.png'
       },
       {
         name: 'Shorts',
@@ -321,24 +321,7 @@ export class MemStorage implements IStorage {
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#808080']
       },
-      {
-        name: 'Relógio Compass Expedition',
-        slug: 'relogio-compass-expedition',
-        description: 'Este relógio multifuncional combina cronógrafo, bússola e altímetro, tudo em um design inspirado nos instrumentos de navegação utilizados nas expedições clássicas. Perfeito para os aventureiros modernos que valorizam funcionalidade e estilo.',
-        price: 879.90,
-        image: 'https://images.unsplash.com/photo-1689204735544-d2f5278ba67c?w=800&auto=format&fit=crop',
-        images: [
-          'https://images.unsplash.com/photo-1629392554711-1b9d5f6d0cef?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1569411032431-07598b0012c2?w=800&auto=format&fit=crop'
-        ],
-        rating: 4.9,
-        reviewCount: 32,
-        installments: 10,
-        category: 'relogios',
-        featured: false,
-        stock: 8,
-        sizes: ['Único'],
-        colors: ['#000000', '#8B4513']
+      ']
       },
       {
         name: 'Polo Expedição Aérea',
