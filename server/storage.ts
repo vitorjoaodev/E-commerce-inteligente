@@ -350,4 +350,10 @@ export class MemStorage implements IStorage {
   }
 }
 
+    products.forEach(product => {
+      this.createProduct(product);
+    });
+  }
+}
+
 export const storage = new MemStorage();
