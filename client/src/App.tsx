@@ -18,6 +18,7 @@ import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import CategoryPage from './pages/CategoryPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   const [loading, setLoading] = useState(true);
