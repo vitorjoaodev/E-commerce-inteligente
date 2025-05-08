@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,14 +11,14 @@ import VideoBackground from "./components/VideoBackground";
 import Navbar from "./components/Navbar";
 import ExitIntentPopup from "./components/ExitIntentPopup";
 import Footer from "./components/Footer";
+import LoadingScreen from "./components/LoadingScreen";
+import ScrollToTop from "./components/ScrollToTop"; // importado aqui
 
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import CategoryPage from "./pages/CategoryPage";
-import { lazy } from "react";
-import LoadingScreen from "./components/LoadingScreen";
 
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 
@@ -26,7 +26,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading for page transition
     setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -41,6 +40,7 @@ function App() {
       <Provider store={store}>
         <TooltipProvider>
           <Router>
+            <ScrollToTop /> {/* garante rolagem ao topo em cada rota */}
             <VideoBackground />
             <Navbar />
             <ExitIntentPopup />
@@ -49,10 +49,7 @@ function App() {
               <Route path="/produto/:id" element={<ProductPage />} />
               <Route path="/carrinho" element={<CartPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
-              <Route
-                path="/categoria/:categoryName"
-                element={<CategoryPage />}
-              />
+              <Route path="/categoria/:categoryName" element={<CategoryPage />} />
               <Route path="/sobre" element={<AboutPage />} />
             </Routes>
             <Footer />
