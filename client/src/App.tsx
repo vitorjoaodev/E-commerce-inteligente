@@ -18,6 +18,7 @@ import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import CategoryPage from "./pages/CategoryPage";
 import { lazy } from "react";
+import LoadingScreen from "./components/LoadingScreen";
 
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 
