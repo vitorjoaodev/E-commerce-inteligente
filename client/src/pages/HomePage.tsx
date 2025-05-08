@@ -32,25 +32,25 @@ const HomePage: React.FC = () => {
       id: 1,
       title: 'Camisetas Piloto',
       slug: 'camisetas',
-      image: '/user_message_attached_files/image.jpg',
+      image: 'https://redcanoebrands.com/wp-content/uploads/2019/10/M-LST-AVL-NY_lifestyle1.jpg',
     },
     {
       id: 2,
       title: 'Relógios de Aviador',
       slug: 'relogios',
-      image: 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg',
+      image: 'https://www.theaviatorstore.com.au/cdn/shop/products/bluedial4.webp?v=1672975153&width=1200',
     },
     {
       id: 3,
       title: 'Bonés',
       slug: 'bones',
-      image: 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg',
+      image: 'https://redcanoebrands.com/wp-content/uploads/2013/04/U-CAP-CESS-01-NY_lifestyle1_WEB.jpg',
     },
     {
       id: 4,
       title: 'Acessórios de Voo',
       slug: 'acessorios',
-      image: 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg',
+      image: 'https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-VINTAGELOGO-TN_lifestyle2.jpg',
     },
   ];
   
