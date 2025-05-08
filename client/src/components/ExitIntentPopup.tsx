@@ -36,7 +36,6 @@ const ExitIntentPopup = () => {
     e.preventDefault();
     if (!email) return;
     
-    // Here you would typically send the email to your backend
     setSubmitted(true);
     toast({
       title: "Obrigado por se inscrever!",
@@ -46,42 +45,48 @@ const ExitIntentPopup = () => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-[600px]">
+      <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden">
         <DialogHeader>
           <div className="relative">
             <img 
-              src="https://i.imgur.com/f4npZyo.jpg" 
-              alt="Pilot in cockpit" 
-              className="w-full h-48 object-cover rounded-t-lg"
+              src="https://preview.redd.it/w1w69mvgscs91.png?width=640&crop=smart&auto=webp&s=b03a93548e872604dbc978ae91bf160b45c64a1f" 
+              alt="Vintage Airplane" 
+              className="w-full h-64 object-cover"
             />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <h2 className="text-3xl font-adventure text-white text-center px-4">
-                Voe mais ALTO
+            <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
+              <h2 className="text-4xl font-adventure text-primary text-center px-4 mb-2">
+                Voe mais alto conosco!
               </h2>
+              <p className="text-white text-xl font-semibold">
+                Não perca esta oportunidade exclusiva
+              </p>
             </div>
           </div>
         </DialogHeader>
-        <div className="p-6">
+        <div className="p-6 bg-background">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <p className="text-lg text-center mb-4">
-                Inscreva-se com o seu melhor E-mail e ganhe 15% de desconto
+              <p className="text-xl text-center mb-4 font-semibold text-primary">
+                Ganhe 15% de desconto na sua primeira compra
               </p>
               <Input
                 type="email"
                 placeholder="Seu melhor email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full"
+                className="w-full bg-background border-primary/50 focus:border-primary"
                 required
               />
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+              <Button 
+                type="submit" 
+                className="w-full bg-primary hover:bg-primary/90 text-background font-adventure text-lg"
+              >
                 Quero Voar Mais Alto
               </Button>
             </form>
           ) : (
             <div className="text-center space-y-4">
-              <h3 className="text-2xl font-adventure">Ótimo Voo!</h3>
+              <h3 className="text-2xl font-adventure text-primary">Ótimo Voo!</h3>
               <p>Obrigado por se inscrever! Preparamos tudo para sua decolagem.</p>
               <p className="text-sm text-muted-foreground">
                 Fique de olho em seu email para receber seu código de desconto.
