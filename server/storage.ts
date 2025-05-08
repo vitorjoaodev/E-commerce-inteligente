@@ -197,7 +197,7 @@ export class MemStorage implements IStorage {
     // Create products
     const products = [
       {
-        name: 'Jaqueta Aviador Premium',
+        name: 'Jaqueta Aviador Premium - Unisex',
         slug: 'jaqueta-aviador-premium',
         description: 'Apresentando o logo vintage com asas da Boeing, esta jaqueta de voo leve e estilosa para o verão é inspirada no design clássico das roupas de aviação. Na cor carvão, ela é feita com uma mistura rica em algodão e se destaca pelos bolsos para mapas, zíperes de metal escovado e ombros em lona resistente.\n\nMistura rica em algodão\n\nCor: Carvão (Charcoal)\n\nForro em nylon\n\nBolsos nos ombros e punhos com zíperes de metal escovado\n\nBolso no ombro em lona pesada, ideal para guardar uma caneta',
         price: 389.99,
@@ -211,11 +211,49 @@ export class MemStorage implements IStorage {
         rating: 4.9,
         reviewCount: 36,
         installments: 12,
-        category: 'camisetas',
+        category: 'agasalhos',
         featured: true,
         stock: 15,
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#8B4513', '#000000', '#556B2F']
+      },
+      {
+        name: 'Agasalho Boeing Masculino',
+        slug: 'agasalho-boeing-masculino',
+        description: 'Essa blusa de moletom encorpada, porém incrivelmente macia, foi feita para acompanhar você em todos os momentos. Com letras aplicadas em feltro duplo, o design ousado e gráfico é uma homenagem ao estilo vintage e à qualidade duradoura. Seu caimento relaxado, conforto térmico e praticidade fazem dela a companheira ideal — seja em aventuras ao ar livre ou em dias tranquilos.\n\nMoletom pesado com zíper frontal\n\nCor: Cinza\n\nPunhos e barra canelados\n\nLetreiramento frontal com aplique duplo em feltro\n\nPatch bordado na manga\n\nBolso frontal com zíper',
+        price: 189.90,
+        image: 'https://redcanoebrands.com/wp-content/uploads/2021/09/Boeing-Applique-Full-Zip_front-2.jpg',
+        images: [
+          'https://redcanoebrands.com/wp-content/uploads/2021/09/Boeing-Full-Zip_Lifestyle.jpg'
+        ],
+        rating: 4.8,
+        reviewCount: 32,
+        installments: 4,
+        category: 'agasalhos',
+        featured: true,
+        stock: 20,
+        sizes: ['P', 'M', 'G', 'GG'],
+        colors: ['#808080']
+      },
+      {
+        name: 'Boeing Flight Jacket Feminino',
+        slug: 'boeing-flight-jacket-feminino',
+        description: 'Voe com estilo com nossa Jaqueta de Voo Feminina com o logotipo da Boeing Airplane Company.\n\nConfeccionada com uma mescla de algodão premium, essa jaqueta une conforto e elegância. Possui forro em nylon, zíperes metálicos escovados nos ombros e bolso interno — detalhes que reforçam seu design funcional e sofisticado.\n\nTecido com alta porcentagem de algodão para maior conforto\n\nCor: Cinza Chumbo (Charcoal)\n\nForro interno em nylon\n\nZíperes de metal escovado nos ombros e bolso interno',
+        price: 389.99,
+        oldPrice: 400.00,
+        image: 'https://redcanoebrands.com/wp-content/uploads/2021/03/Womens-BOEING-flight-jacket.jpg',
+        images: [
+          'https://redcanoebrands.com/wp-content/uploads/2021/03/Womens-Boeing-flight-jacket-still.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2021/03/L-JKT-BOEING-CH-LG_lifestyle.jpg'
+        ],
+        rating: 4.9,
+        reviewCount: 28,
+        installments: 10,
+        category: 'agasalhos',
+        featured: true,
+        stock: 15,
+        sizes: ['PP', 'P', 'M', 'G', 'GG'],
+        colors: ['#4A4A4A']
       },
       {
         name: 'Cessna Style',
