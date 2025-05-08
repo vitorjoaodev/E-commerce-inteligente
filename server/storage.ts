@@ -321,8 +321,6 @@ export class MemStorage implements IStorage {
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#808080']
       },
-      ']
-      },
       {
         name: 'Polo Expedição Aérea',
         slug: 'polo-expedicao-aerea',
@@ -343,12 +341,6 @@ export class MemStorage implements IStorage {
         colors: ['#006400', '#8B4513', '#333333']
       }
     ];
-
-    products.forEach(product => {
-      this.createProduct(product);
-    });
-  }
-}
 
     products.forEach(product => {
       this.createProduct(product);
