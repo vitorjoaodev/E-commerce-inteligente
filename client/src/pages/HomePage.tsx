@@ -10,7 +10,7 @@ import { Plane, MessageSquare } from 'lucide-react';
 const HomePage: React.FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -23,10 +23,10 @@ const HomePage: React.FC = () => {
         setLoading(false);
       }
     };
-    
+
     fetchProducts();
   }, []);
-  
+
   const categories = [
     {
       id: 1,
@@ -53,7 +53,7 @@ const HomePage: React.FC = () => {
       image: 'https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-VINTAGELOGO-TN_lifestyle2.jpg',
     },
   ];
-  
+
   const testimonials = [
     {
       id: 1,
@@ -77,19 +77,19 @@ const HomePage: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=800&auto=format&fit=crop',
     },
   ];
-  
+
   return (
     <main>
       <HeroSection />
-      
+
       {/* Featured Categories */}
       <section className="py-16 relative">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="font-adventure text-4xl mb-4">Coordenadas de Destino</h2>
             <div className="adventure-divider max-w-xs mx-auto"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {categories.map(category => (
               <CategoryCard 
@@ -102,10 +102,10 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Products */}
       <section className="py-16 relative">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="font-adventure text-4xl mb-4">Expedição em Destaque</h2>
             <div className="adventure-divider max-w-xs mx-auto"></div>
@@ -113,7 +113,7 @@ const HomePage: React.FC = () => {
               Descubra nossa coleção selecionada de tesouros para aviadores aventureiros.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {loading ? (
               Array.from({ length: 4 }).map((_, idx) => (
@@ -125,7 +125,7 @@ const HomePage: React.FC = () => {
               ))
             )}
           </div>
-          
+
           <div className="mt-12 text-center">
             <Link 
               to="/categoria/todos" 
@@ -136,7 +136,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Adventure Banner */}
       <section className="relative py-24 overflow-hidden leather-texture">
         <div className="absolute inset-0 bg-black/70"></div>
@@ -157,15 +157,15 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials */}
       <section className="py-16 bg-[#0A0A0A]">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="font-adventure text-4xl mb-4">Relatos de Expedição</h2>
             <div className="adventure-divider max-w-xs mx-auto"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map(testimonial => (
               <TestimonialCard 
@@ -179,10 +179,10 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Newsletter */}
       <section className="py-12 bg-[#8B4513]">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-6 md:mb-0">
               <h3 className="font-adventure text-3xl text-foreground mb-2">Junte-se à Expedição</h3>
@@ -190,7 +190,7 @@ const HomePage: React.FC = () => {
                 Receba novas rotas, ofertas exclusivas e histórias de aventura.
               </p>
             </div>
-            
+
             <div className="w-full md:w-auto">
               <form className="flex flex-col sm:flex-row gap-3">
                 <input 
