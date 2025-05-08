@@ -11,7 +11,6 @@ import VideoBackground from "./components/VideoBackground";
 import Navbar from "./components/Navbar";
 import ExitIntentPopup from "./components/ExitIntentPopup";
 import Footer from "./components/Footer";
-import ExitIntentPopup from "./components/ExitIntentPopup";
 
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
