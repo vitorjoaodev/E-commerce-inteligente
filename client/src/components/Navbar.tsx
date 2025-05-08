@@ -39,6 +39,10 @@ const Navbar: React.FC = () => {
         </Link>
 
         <div className={`md:flex gap-8 items-center ${mobileMenuOpen ? 'absolute inset-x-0 top-full flex flex-col items-start px-4 py-4 bg-black bg-opacity-90' : 'hidden'}`}>
+          <Link to="/" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2 px-4 bg-[#F3B004] rounded-md">
+            Home
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </Link>
           <Link to="/categoria/camisetas" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
             Camisetas
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -57,11 +61,6 @@ const Navbar: React.FC = () => {
             Acessórios
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link to="/" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
-            Home
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-          </Link>
-
           <Link to="/sobre" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
             Nossa História
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
