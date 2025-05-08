@@ -210,7 +210,7 @@ export class MemStorage implements IStorage {
         reviewCount: 36,
         installments: 12,
         category: 'agasalhos',
-        featured: false,
+        featured: true,
         stock: 15,
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#8B4513', '#000000', '#556B2F']
@@ -228,7 +228,7 @@ export class MemStorage implements IStorage {
         reviewCount: 32,
         installments: 4,
         category: 'agasalhos',
-        featured: false,
+        featured: true,
         stock: 20,
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#808080']
@@ -267,7 +267,7 @@ export class MemStorage implements IStorage {
         reviewCount: 42,
         installments: 3,
         category: 'camisetas',
-        featured: false,
+        featured: true,
         stock: 25,
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#000000', '#FFFFFF', '#0A3D62']
@@ -287,7 +287,7 @@ export class MemStorage implements IStorage {
         reviewCount: 42,
         installments: 10,
         category: 'relogios',
-        featured: false,
+        featured: true,
         stock: 15,
         sizes: ['Único'],
         colors: ['#000080']
@@ -307,7 +307,7 @@ export class MemStorage implements IStorage {
         reviewCount: 28,
         installments: 4,
         category: 'bones',
-        featured: false,
+        featured: true,
         stock: 30,
         sizes: ['Único'],
         colors: ['#000080']
