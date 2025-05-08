@@ -90,7 +90,7 @@ const CategoryPage: React.FC = () => {
   const getCategoryImage = () => {
     switch (categoryName) {
       case 'camisetas': 
-        return '/user_message_attached_files/image.jpg';
+        return 'https://redcanoebrands.com/wp-content/uploads/2023/09/2023_New-Arrivals_0923.jpg';
       case 'relogios': 
         return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
       case 'bones': 
