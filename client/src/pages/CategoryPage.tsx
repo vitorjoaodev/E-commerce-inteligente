@@ -94,9 +94,11 @@ const CategoryPage: React.FC = () => {
       case 'relogios': 
         return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
       case 'bones': 
-        return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
+        return 'https://redcanoebrands.com/wp-content/uploads/2024/08/2024_CAPS-BANNEr-1.jpg';
       case 'acessorios': 
-        return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
+        return 'https://redcanoebrands.com/wp-content/uploads/2021/01/January_category-accessories.jpg';
+      case 'agasalhos':
+        return 'https://redcanoebrands.com/wp-content/uploads/2013/02/Canada-Field-Patch-Cardigan_NAVY.jpg';
       default: 
         return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
     }
