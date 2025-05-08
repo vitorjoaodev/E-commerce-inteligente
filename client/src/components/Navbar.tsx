@@ -8,9 +8,9 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  
+
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -19,11 +19,11 @@ const Navbar: React.FC = () => {
         setScrolled(false);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   return (
     <nav className={`sticky top-0 z-40 transition-all duration-300 ${
       scrolled ? 'py-2' : 'py-4'
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             <path d="M290,40 L310,40" stroke="black" strokeWidth="2" />
           </svg>
         </Link>
-        
+
         <div className={`md:flex gap-8 items-center ${mobileMenuOpen ? 'absolute inset-x-0 top-full flex flex-col items-start px-4 py-4 bg-black bg-opacity-90' : 'hidden'}`}>
           <Link to="/categoria/camisetas" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
             Camisetas
@@ -47,18 +47,27 @@ const Navbar: React.FC = () => {
             Relógios
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          
+
           <Link to="/categoria/bones" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
             Boné
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          
+
           <Link to="/categoria/acessorios" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
             Acessórios
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
+          <Link to="/" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
+            Home
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+
+          <Link to="/sobre" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
+            Nossa História
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </Link>
         </div>
-        
+
         <div className="flex items-center gap-5">
           <button className="text-foreground hover:text-primary transition-colors" aria-label="Search">
             <Search size={20} />

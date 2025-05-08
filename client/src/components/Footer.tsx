@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-adventure text-xl mb-4 text-primary">Categorias</h4>
             <ul className="space-y-2">
@@ -40,13 +40,13 @@ const Footer: React.FC = () => {
                   Relógios
                 </Link>
               </li>
-              
+
               <li>
                 <Link to="/categoria/bones" className="text-gray-400 hover:text-primary transition-colors">
                   Boné
                 </Link>
               </li>
-              
+
               <li>
                 <Link to="/categoria/acessorios" className="text-gray-400 hover:text-primary transition-colors">
                   Acessórios
@@ -54,14 +54,19 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-adventure text-xl mb-4 text-primary">Informações</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                  Sobre Nós
-                </a>
+                <Link to="/" className="text-gray-400 hover:text-primary transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/sobre" className="text-gray-400 hover:text-primary transition-colors">
+                  Nossa História
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-primary transition-colors">
@@ -85,7 +90,7 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-adventure text-xl mb-4 text-primary">Contato</h4>
             <ul className="space-y-3">
@@ -107,7 +112,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-6 mt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">

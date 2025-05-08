@@ -47,6 +47,7 @@ function App() {
               <Route path="/carrinho" element={<CartPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/categoria/:categoryName" element={<CategoryPage />} />
+              <Route path="/sobre" element={<AboutPage />} />
             </Routes>
             <Footer />
             <Toaster />
