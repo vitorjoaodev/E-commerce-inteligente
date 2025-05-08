@@ -32,19 +32,25 @@ const HomePage: React.FC = () => {
       id: 1,
       title: 'Camisetas Piloto',
       slug: 'camisetas',
-      image: '/Design sem nome (84).png',
+      image: '/user_message_attached_files/image.jpg',
     },
     {
       id: 2,
       title: 'Relógios de Aviador',
       slug: 'relogios',
-      image: 'https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg',
     },
     {
       id: 3,
+      title: 'Bonés',
+      slug: 'bones',
+      image: 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg',
+    },
+    {
+      id: 4,
       title: 'Acessórios de Voo',
       slug: 'acessorios',
-      image: 'https://images.unsplash.com/photo-1547458095-a045e1845d70?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg',
     },
   ];
   

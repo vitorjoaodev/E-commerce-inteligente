@@ -81,8 +81,7 @@ const CategoryPage: React.FC = () => {
     switch (categoryName) {
       case 'camisetas': return 'Camisetas Piloto';
       case 'relogios': return 'Relógios de Aviador';
-      case 'polos': return 'Polos Exclusivas';
-      case 'shorts': return 'Shorts Aviator';
+      case 'bones': return 'Bonés';
       case 'acessorios': return 'Acessórios de Voo';
       default: return 'Todos os Produtos';
     }
@@ -91,17 +90,15 @@ const CategoryPage: React.FC = () => {
   const getCategoryImage = () => {
     switch (categoryName) {
       case 'camisetas': 
-        return '/Design sem nome (84).png';
+        return '/user_message_attached_files/image.jpg';
       case 'relogios': 
-        return 'https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-      case 'polos': 
-        return 'attached_assets/image_1746655940427.png';
-      case 'shorts': 
-        return 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+        return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
+      case 'bones': 
+        return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
       case 'acessorios': 
-        return 'https://images.unsplash.com/photo-1547458095-a045e1845d70?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+        return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
       default: 
-        return 'https://images.unsplash.com/photo-1529074963764-98f45c47344b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+        return 'https://disciplesofflight.com/wp-content/uploads/2014/04/Night.jpg';
     }
   };
   
