@@ -269,7 +269,7 @@ export class MemStorage implements IStorage {
         rating: 4.8,
         reviewCount: 28,
         installments: 4,
-        category: 'acessorios',
+        category: 'bones',
         featured: true,
         stock: 30,
         sizes: ['Único'],
