@@ -66,6 +66,10 @@ const Navbar: React.FC = () => {
             Agasalhos de Voo
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
+          <Link to="/sobre" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
+            Nossa História
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </Link>
           </div>
 
         <div className="flex items-center gap-5">
