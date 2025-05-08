@@ -333,6 +333,24 @@ export class MemStorage implements IStorage {
         sizes: ['PP', 'P', 'M', 'G', 'GG'],
         colors: ['#808080']
       },
+      {
+        name: 'Camiseta Feminina Boeing',
+        slug: 'camiseta-feminina-boeing',
+        description: 'O Boeing 747, conhecido como "Jumbo Jet", revolucionou o mundo ao tornar as viagens aéreas acessíveis às massas e possibilitar voos diretos entre cidades distantes ao redor do globo. Em fevereiro de 1969, o primeiro 747 – número de série 001 – realizou seu voo inaugural sobre o estado de Washington. Comemore esse marco gigante da aviação com nossa camiseta feminina Boeing RA001.\n\nUm novo item indispensável para fãs de aviação. Confeccionada em 100% algodão tipo jersey, com modelagem ajustada e mangas curtas clássicas. Ideal para os dias quentes de verão ou para sobreposição no outono. Lavada após a estampa para um toque vintage único.\n\n100% algodão\n\nCor: Cinza Chumbo (Slate)\n\nFita de reforço interna contrastante\n\nGola careca canelada\n\nEtiqueta na barra\n\nLavada após a estampa\n\nPré-encolhida\n\nCuidados:\nLavar à máquina com água fria. Secar em temperatura baixa ou pendurar para secar.',
+        price: 79.99,
+        image: 'https://redcanoebrands.com/wp-content/uploads/2020/07/L-SST-BOEING-SL-SM_front.jpg',
+        images: [
+          'https://redcanoebrands.com/wp-content/uploads/2020/07/L-SST-BOEING-SL-SM_back-1.jpg'
+        ],
+        rating: 4.8,
+        reviewCount: 25,
+        installments: 3,
+        category: 'camisetas',
+        featured: true,
+        stock: 30,
+        sizes: ['PP', 'P', 'M', 'G', 'GG'],
+        colors: ['#708090']
+      },
       
     ];
 
