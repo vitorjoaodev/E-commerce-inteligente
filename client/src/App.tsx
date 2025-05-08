@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
-import store from './lib/store';
+import store from "./lib/store";
 
-import VideoBackground from './components/VideoBackground';
-import Navbar from './components/Navbar';
-import ExitIntentPopup from './components/ExitIntentPopup';
-import Footer from './components/Footer';
-import LoadingScreen from './components/LoadingScreen';
+import VideoBackground from "./components/VideoBackground";
+import Navbar from "./components/Navbar";
+import ExitIntentPopup from "./components/ExitIntentPopup";
+import Footer from "./components/Footer";
+import ExitIntentPopup from "./components/ExitIntentPopup";
 
-import HomePage from './pages/HomePage';
-import ProductPage from './pages/ProductPage';
-import CartPage from './pages/CartPage';
-import CheckoutPage from './pages/CheckoutPage';
-import CategoryPage from './pages/CategoryPage';
-import { lazy } from 'react';
+import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage";
+import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import CategoryPage from "./pages/CategoryPage";
+import { lazy } from "react";
 
-const AboutPage = lazy(() => import('./pages/AboutPage'));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -49,7 +49,10 @@ function App() {
               <Route path="/produto/:id" element={<ProductPage />} />
               <Route path="/carrinho" element={<CartPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
-              <Route path="/categoria/:categoryName" element={<CategoryPage />} />
+              <Route
+                path="/categoria/:categoryName"
+                element={<CategoryPage />}
+              />
               <Route path="/sobre" element={<AboutPage />} />
             </Routes>
             <Footer />
