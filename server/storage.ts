@@ -181,8 +181,6 @@ export class MemStorage implements IStorage {
         slug: 'relogios',
         image: 'https://www.boeingstore.com/cdn/shop/products/brownwatch1.jpg?v=1617997785'
       },
-      
-      
       {
         name: 'Acessórios',
         slug: 'acessorios',
@@ -410,7 +408,7 @@ export class MemStorage implements IStorage {
         sizes: ['Único'],
         colors: ['#000080']
       },
-      
+
     ];
 
     products.forEach(product => {
