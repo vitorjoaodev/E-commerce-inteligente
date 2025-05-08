@@ -210,7 +210,7 @@ export class MemStorage implements IStorage {
         reviewCount: 36,
         installments: 12,
         category: 'agasalhos',
-        featured: true,
+        featured: false,
         stock: 15,
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#8B4513', '#000000', '#556B2F']
@@ -228,7 +228,7 @@ export class MemStorage implements IStorage {
         reviewCount: 32,
         installments: 4,
         category: 'agasalhos',
-        featured: true,
+        featured: false,
         stock: 20,
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#808080']
@@ -248,7 +248,7 @@ export class MemStorage implements IStorage {
         reviewCount: 28,
         installments: 10,
         category: 'agasalhos',
-        featured: true,
+        featured: false,
         stock: 15,
         sizes: ['PP', 'P', 'M', 'G', 'GG'],
         colors: ['#4A4A4A']
@@ -267,7 +267,7 @@ export class MemStorage implements IStorage {
         reviewCount: 42,
         installments: 3,
         category: 'camisetas',
-        featured: true,
+        featured: false,
         stock: 25,
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#000000', '#FFFFFF', '#0A3D62']
@@ -287,7 +287,7 @@ export class MemStorage implements IStorage {
         reviewCount: 42,
         installments: 10,
         category: 'relogios',
-        featured: true,
+        featured: false,
         stock: 15,
         sizes: ['Único'],
         colors: ['#000080']
@@ -307,7 +307,7 @@ export class MemStorage implements IStorage {
         reviewCount: 28,
         installments: 4,
         category: 'bones',
-        featured: true,
+        featured: false,
         stock: 30,
         sizes: ['Único'],
         colors: ['#000080']
@@ -315,7 +315,7 @@ export class MemStorage implements IStorage {
       {
         name: 'Carteira Boeing',
         slug: 'carteira-boeing',
-        description: 'Carteira Boeing - Engenharia de Espaços, Inspirada na precisão e inovação da engenharia aeroespacial da Boeing, esta carteira combina funcionalidade com um design sofisticado.\n\nFeita em couro legítimo (cowhide)\n\nCor: Marrom claro (Tan)\n\nDimensões: 12,7 cm (C) x 10,2 cm (L) x 1,9 cm (P)\n\nUma peça elegante e resistente — perfeita para quem carrega no dia a dia o espírito da aviação.',
+        description: 'Carteira Boeing - Engenharia de Espaços, Inspirada na precisão e na inovação da engenharia aeroespacial da Boeing, esta carteira combina funcionalidade com um design sofisticado.\n\nFeita em couro legítimo (cowhide)\n\nCor: Marrom claro (Tan)\n\nDimensões: 12,7 cm (C) x 10,2 cm (L) x 1,9 cm (P)\n\nUma peça elegante e resistente — perfeita para quem carrega no dia a dia o espírito da aviação.',
         price: 59.99,
         image: 'https://redcanoebrands.com/wp-content/uploads/2022/10/U-WAL-VINTAGELOGO-TN_lifestyle2.jpg',
         images: [
@@ -326,7 +326,7 @@ export class MemStorage implements IStorage {
         reviewCount: 42,
         installments: 6,
         category: 'acessorios',
-        featured: true,
+        featured: false,
         stock: 25,
         sizes: ['Único'],
         colors: ['#D2B48C']
@@ -345,7 +345,7 @@ export class MemStorage implements IStorage {
         reviewCount: 25,
         installments: 4,
         category: 'camisetas',
-        featured: true,
+        featured: false,
         stock: 20,
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#808080']
@@ -365,7 +365,7 @@ export class MemStorage implements IStorage {
         reviewCount: 31,
         installments: 4,
         category: 'camisetas',
-        featured: true,
+        featured: false,
         stock: 25,
         sizes: ['PP', 'P', 'M', 'G', 'GG'],
         colors: ['#808080']
@@ -383,7 +383,7 @@ export class MemStorage implements IStorage {
         reviewCount: 25,
         installments: 3,
         category: 'camisetas',
-        featured: true,
+        featured: false,
         stock: 30,
         sizes: ['PP', 'P', 'M', 'G', 'GG'],
         colors: ['#708090']
@@ -403,7 +403,7 @@ export class MemStorage implements IStorage {
         reviewCount: 15,
         installments: 2,
         category: 'bones',
-        featured: true,
+        featured: false,
         stock: 30,
         sizes: ['Único'],
         colors: ['#000080']
