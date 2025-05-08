@@ -313,6 +313,26 @@ export class MemStorage implements IStorage {
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#808080']
       },
+      {
+        name: 'Camiseta Feminina B17',
+        slug: 'camiseta-feminina-b17',
+        description: 'Celebre a história de uma das aeronaves mais resistentes do século XX.\n\nConfeccionada em 100% algodão tipo jersey\n\nCor: Cinza\n\nFita de reforço interna contrastante\n\nGola careca com acabamento canelado\n\nEtiqueta na barra\n\nLavada após a estampa para um toque suave\n\nPré-encolhida\n\nLavar à máquina com água fria e secar em baixa temperatura ou pendurar para secar',
+        price: 189.90,
+        image: 'https://redcanoebrands.com/wp-content/uploads/2016/02/L-SST-B17CA-GY-MD_front-1.jpg',
+        images: [
+          'https://redcanoebrands.com/wp-content/uploads/2016/02/L-SST-B17CA-GY_lifestyle1.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2016/02/L-SST-B17CA-GY-MD_lifestyle.jpg',
+          'https://redcanoebrands.com/wp-content/uploads/2023/03/L-SST-B17CA-GY_lifestyle1.jpg'
+        ],
+        rating: 4.9,
+        reviewCount: 31,
+        installments: 4,
+        category: 'camisetas',
+        featured: true,
+        stock: 25,
+        sizes: ['PP', 'P', 'M', 'G', 'GG'],
+        colors: ['#808080']
+      },
       
     ];
 
