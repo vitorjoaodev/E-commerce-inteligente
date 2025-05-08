@@ -91,7 +91,7 @@ const CategoryPage: React.FC = () => {
   const getCategoryImage = () => {
     switch (categoryName) {
       case 'camisetas': 
-        return 'https://images.unsplash.com/photo-1555009393-f20bdb245c4d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+        return '/Design sem nome (84).png';
       case 'relogios': 
         return 'https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
       case 'polos': 
