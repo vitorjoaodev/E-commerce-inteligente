@@ -40,11 +40,7 @@ const Footer: React.FC = () => {
                   Relógios
                 </Link>
               </li>
-              <li>
-                <Link to="/categoria/polos" className="text-gray-400 hover:text-primary transition-colors">
-                  Polos
-                </Link>
-              </li>
+              
               <li>
                 <Link to="/categoria/shorts" className="text-gray-400 hover:text-primary transition-colors">
                   Shorts

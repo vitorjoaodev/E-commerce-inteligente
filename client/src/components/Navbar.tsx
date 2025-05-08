@@ -47,10 +47,7 @@ const Navbar: React.FC = () => {
             Relógios
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link to="/categoria/polos" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
-            Polos
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-          </Link>
+          
           <Link to="/categoria/shorts" className="font-adventure text-sm uppercase tracking-wider hover:text-primary transition-colors relative group py-2">
             Shorts
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>

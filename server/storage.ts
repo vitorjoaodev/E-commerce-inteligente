@@ -181,11 +181,7 @@ export class MemStorage implements IStorage {
         slug: 'relogios',
         image: 'https://www.boeingstore.com/cdn/shop/products/brownwatch1.jpg?v=1617997785'
       },
-      {
-        name: 'Polos',
-        slug: 'polos',
-        image: 'attached_assets/image_1746655940427.png'
-      },
+      
       {
         name: 'Shorts',
         slug: 'shorts',
@@ -321,25 +317,7 @@ export class MemStorage implements IStorage {
         sizes: ['P', 'M', 'G', 'GG'],
         colors: ['#808080']
       },
-      {
-        name: 'Polo Expedição Aérea',
-        slug: 'polo-expedicao-aerea',
-        description: 'Polo com detalhes que remetem às primeiras expedições aéreas, com patches bordados e acabamento premium. Tecido tecnológico com proteção UV e secagem rápida, ideal para aventureiros que não abrem mão do estilo.',
-        price: 139.90,
-        image:'https://images.tcdn.com.br/img/img_prod/553809/polo_caca_f5_429_1_7d4b9a8876c0b060a04745be9ffc05d1.jpg',
-        images: [
-          'https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1503342394128-c104d54dba01?w=800&auto=format&fit=crop'
-        ],
-        rating: 4.7,
-        reviewCount: 24,
-        installments: 5,
-        category: 'polos',
-        featured: false,
-        stock: 22,
-        sizes: ['P', 'M', 'G', 'GG'],
-        colors: ['#006400', '#8B4513', '#333333']
-      }
+      
     ];
 
     products.forEach(product => {
