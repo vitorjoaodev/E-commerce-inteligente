@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../lib/store';
-import { Search, User, ShoppingCart, Menu, X } from 'lucide-react';
+import { User, ShoppingCart, Menu, X } from 'lucide-react';
+import SearchDialog from './SearchDialog';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -73,9 +74,7 @@ const Navbar: React.FC = () => {
           </div>
 
         <div className="flex items-center gap-5">
-          <button className="text-foreground hover:text-primary transition-colors" aria-label="Search">
-            <Search size={20} />
-          </button>
+          <SearchDialog />
           <Link to="/perfil" className="text-foreground hover:text-primary transition-colors" aria-label="Profile">
             <User size={20} />
           </Link>

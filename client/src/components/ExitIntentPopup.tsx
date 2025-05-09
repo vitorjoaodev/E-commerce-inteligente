@@ -17,18 +17,18 @@ const ExitIntentPopup = () => {
 
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasShown) {
+      if (
+        e.clientY <= 0 && 
+        !hasShown && 
+        !localStorage.getItem('hasSeenExitPopup')
+      ) {
         setOpen(true);
         setHasShown(true);
         localStorage.setItem('hasSeenExitPopup', 'true');
       }
     };
 
-    const hasSeenPopup = localStorage.getItem('hasSeenExitPopup');
-    if (!hasSeenPopup) {
-      document.addEventListener('mouseleave', handleMouseLeave);
-    }
-
+    document.addEventListener('mouseleave', handleMouseLeave);
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
     };
