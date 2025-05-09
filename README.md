@@ -2,7 +2,7 @@
 *Roupas para exploradores dos céus*  
 **Design UI/UX com estética cinematográfica — estilo Jurassic Park e Indiana Jones**
 
-![Capa do site](qhttps://cdn.midjourney.com/30f33d1b-aviator-cover.jpg)  
+![Capa do site]([qhttps://cdn.midjourney.com/30f33d1b-aviator-cover.jpg](https://github.com/vitorjoaodev/E-commerce-inteligente/blob/main/site.jpg?raw=true)](https://github.com/vitorjoaodev/E-commerce-inteligente/blob/main/site.jpg?raw=true))  
 > “Aviadores não seguem mapas. Eles seguem estrelas.”  
 
 ---
@@ -57,6 +57,8 @@ Imagine:
 - Dark/light mode automático via `next-themes`
 - Animações suaves com Framer Motion
 - UI completamente responsiva e acessível
+- Exit Popup ativo para cadastro e descontos exclusivos do site
+
 
 ---
 
