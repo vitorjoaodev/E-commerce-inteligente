@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import {
   Dialog,
@@ -17,9 +16,6 @@ const ExitIntentPopup = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const hasSeenPopup = localStorage.getItem('hasSeenExitPopup');
-    if (hasSeenPopup) return;
-
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0 && !hasShown) {
         setOpen(true);
@@ -28,14 +24,20 @@ const ExitIntentPopup = () => {
       }
     };
 
-    document.addEventListener('mouseleave', handleMouseLeave);
-    return () => document.removeEventListener('mouseleave', handleMouseLeave);
+    const hasSeenPopup = localStorage.getItem('hasSeenExitPopup');
+    if (!hasSeenPopup) {
+      document.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    return () => {
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
   }, [hasShown]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    
+
     setSubmitted(true);
     toast({
       title: "Obrigado por se inscrever!",
