@@ -48,7 +48,7 @@ const AboutPage = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="w-full md:w-1/2">
               <img 
-                src="https://tokdehistoria.com.br/wp-content/uploads/2021/11/dos-12-boe.jpg?w=800" 
+                src="https://st4.depositphotos.com/36512074/38031/i/450/depositphotos_380311754-stock-photo-rowland-flat-australia-april-2013.jpg" 
                 alt="Boeing histórica" 
                 className="rounded-lg shadow-lg"
               />
